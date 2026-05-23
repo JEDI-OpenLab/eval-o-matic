@@ -2,7 +2,7 @@
 
 ## Statut du document
 
-Ce document prépare un futur projet Codex séparé.
+Ce document prépare un futur projet séparé.
 
 Il ne décrit pas une fonctionnalité publique d'Eval-o-matic. Il cadre un **démonstrateur privé**, destiné à concevoir et présenter une IA d'aide à la construction de questions d'évaluation des enseignements par les étudiants.
 
@@ -995,7 +995,7 @@ Nom recommandé pour la démonstration :
 Eval-o-matic Studio IA
 ```
 
-## Décisions ouvertes pour la prochaine conversation Codex
+## Décisions ouvertes
 
 - Choisir Streamlit ou FastAPI pour le premier POC.
 - Définir la structure exacte du corpus.
