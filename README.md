@@ -7,7 +7,7 @@ Le projet part des documents de travail EEE, des guides de mise en oeuvre et des
 Le dépôt est maintenant séparé en deux espaces :
 
 - `site/` : webapp statique publique Eval-o-matic ;
-- `studio-ia-cim/` : cadrage du futur POC privé d'IA guidée pour construire des items selon la méthode Critère -> Indicateur -> Modalité d'observation.
+- `learnix-eee/` : POC privé d'IA guidée pour construire des items selon la méthode Critère -> Indicateur -> Modalité d'observation.
 
 ## Intention
 
@@ -22,6 +22,8 @@ L'application doit aider une équipe pédagogique à :
 
 ## Version actuelle
 
+Version du site : `2026-05-23.9`
+
 La version initiale contient :
 
 - une structure graphique alignée avec les webapps JEDI existantes ;
@@ -30,7 +32,7 @@ La version initiale contient :
 - un studio de composition avec des items EEE génériques, des items créés par l'utilisateur, une matrice critériée et un audit de formulation ;
 - un export XML compatible avec l'import de questions de l'activité Moodle Feedback ;
 - une synthèse intégrée des principes de conception et de la méthode critère-indicateur-modalité ;
-- une section `Projet en cours` présentant les spécifications du futur Studio IA CIM.
+- une section `Projet en cours` présentant Learnix EEE, son état de POC local et ses spécifications.
 
 ## Structure
 
@@ -44,8 +46,13 @@ eval-o-matic/
 |   `-- assets/
 |       |-- app.js
 |       `-- styles.css
-|-- studio-ia-cim/
-|   `-- SPECIFICATIONS.md      # cadrage complet du futur POC IA privé
+|-- learnix-eee/
+|   |-- SPECIFICATIONS.md      # cadrage complet du POC IA privé
+|   |-- README.md
+|   |-- app/
+|   |-- corpus/
+|   |-- data/
+|   `-- exports/
 `-- docs/
     `-- plan-action.md
 ```
@@ -56,7 +63,7 @@ eval-o-matic/
 - méthode critériée inspirée de De Ketele et Rogiers : critère, indicateur, modalité d'observation ;
 - règles de qualité des questions : clarté, neutralité, unicité de l'objet, anonymat, action possible ;
 - studio de conception : bibliothèque d'items, audit, sélection, export textuel et export Moodle Feedback XML ;
-- présentation complète du projet Studio IA CIM.
+- présentation complète du projet Learnix EEE.
 
 ## Lancer l'application
 
@@ -64,9 +71,9 @@ L'application publique est statique. Elle peut être ouverte directement depuis 
 
 Le fichier `index.html` à la racine redirige vers `site/index.html` pour conserver un point d'entrée simple.
 
-## Studio IA CIM
+## Learnix EEE
 
-Le dossier `studio-ia-cim/` ne contient pas encore l'application. Il contient le document de cadrage du futur démonstrateur privé :
+Le dossier `learnix-eee/` contient le POC privé du démonstrateur IA :
 
 - intention du projet ;
 - justification par le modèle ADDIE ;
@@ -75,7 +82,7 @@ Le dossier `studio-ia-cim/` ne contient pas encore l'application. Il contient le
 - spécifications techniques ;
 - principes de sécurité, de corpus, de prompts, d'exports et d'évaluation.
 
-Ce futur studio IA doit rester privé tant que les questions de corpus, de clé API, de gouvernance et de démonstration ne sont pas stabilisées.
+Learnix EEE dispose maintenant d'un premier scaffold local : Streamlit, RAG documentaire minimal, schémas Pydantic, mode mock, audit heuristique et exports JSON/XML Moodle Feedback. Le projet doit rester privé tant que les questions de corpus, de clé API, de gouvernance et de démonstration ne sont pas stabilisées.
 
 ## Licence
 

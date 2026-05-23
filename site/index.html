@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://jedi-openlab.github.io/jedi/PIX/favicon-32.png">
     <link rel="apple-touch-icon" href="https://jedi-openlab.github.io/jedi/PIX/favicon-180.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.8">
+    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.9">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -481,50 +481,75 @@
           <div class="section-heading">
             <p class="kicker">Projet en cours</p>
             <div class="heading-with-help">
-              <h2>Eval-o-matic Studio IA</h2>
-              <button class="help-button" type="button" aria-label="Aide : projet en cours" data-help-title="Projet en cours" data-help-body="Cette section présente le démonstrateur privé envisagé pour accompagner la conception d'items EEE avec une IA guidée par la méthode critère, indicateur et modalité d'observation.">?</button>
+              <h2>Learnix EEE</h2>
+              <button class="help-button" type="button" aria-label="Aide : projet en cours" data-help-title="Projet en cours" data-help-body="Cette section présente le démonstrateur privé Learnix EEE, conçu pour accompagner la conception d'items EEE avec une IA guidée par la méthode critère, indicateur et modalité d'observation.">?</button>
             </div>
             <p>
-              Le Studio IA CIM explore une IA d'aide à la conception d'items EEE. Le principe central reste
+              Learnix EEE explore une IA d'aide à la conception d'items EEE. Le principe central reste
               méthodologique : partir d'une intention, reconstruire la chaîne critère, indicateur, modalité
               d'observation, puis produire et auditer des questions actionnables.
             </p>
           </div>
 
-          <div class="project-signal-grid" aria-label="Repères du projet Studio IA CIM">
+          <div class="project-signal-grid" aria-label="Repères du projet Learnix EEE">
             <article class="project-signal">
               <strong>Statut</strong>
-              <span>Démonstrateur privé</span>
+              <span>POC local amorcé</span>
             </article>
             <article class="project-signal">
               <strong>Méthode</strong>
-              <span>Critère → Indicateur → Modalité</span>
+              <span>CIM + RAG local</span>
             </article>
             <article class="project-signal">
-              <strong>IA</strong>
-              <span>Assistant de méthode</span>
+              <strong>Modèle candidat</strong>
+              <span>gpt-oss-120b</span>
             </article>
             <article class="project-signal">
               <strong>Sorties</strong>
-              <span>Items, audit, exports</span>
+              <span>JSON + XML Moodle</span>
             </article>
           </div>
 
-          <article class="spec-document" id="projectSpecDocument" aria-label="Spécifications du Studio IA CIM"></article>
+          <article class="wide-note accent-note project-update">
+            <h3>Prototype amorcé</h3>
+            <p>
+              Le POC privé est scaffoldé : interface Streamlit locale, mode mock sans appel API,
+              schémas Pydantic, recherche documentaire locale dans le corpus, audit heuristique
+              et exports JSON/XML Moodle Feedback. Le corpus méthodologique peut maintenant être enrichi
+              progressivement dans <code>learnix-eee/corpus/sources/</code>.
+            </p>
+          </article>
+
+          <article class="spec-document" id="projectSpecDocument" aria-label="Spécifications de Learnix EEE"></article>
           <script type="text/plain" id="projectSpecMarkdown">
-# Studio IA CIM - POC privé pour Eval-o-matic
+# Learnix EEE - POC privé pour Eval-o-matic
 
 ## Statut du document
 
-Ce document prépare un futur projet séparé.
+Ce document décrit le projet Learnix EEE et son premier POC privé.
 
 Il ne décrit pas une fonctionnalité publique d'Eval-o-matic. Il cadre un **démonstrateur privé**, destiné à concevoir et présenter une IA d'aide à la construction de questions d'évaluation des enseignements par les étudiants.
 
-Le projet doit rester distinct du site public tant que les choix techniques, juridiques, pédagogiques et institutionnels ne sont pas stabilisés.
+Le projet reste distinct du site public tant que les choix techniques, juridiques, pédagogiques et institutionnels ne sont pas stabilisés.
+
+## État actuel du POC
+
+La phase de cadrage est engagée et les premiers choix sont actés :
+
+- nom principal : **Learnix EEE** ;
+- sous-titre : **Assistant IA pour concevoir des questionnaires d'évaluation des enseignements** ;
+- application locale privée : Streamlit ;
+- modèle candidat principal : `gpt-oss-120b` ;
+- RAG documentaire local dès le premier prototype ;
+- corpus de travail dans `corpus/sources/` ;
+- sorties structurées par schémas Pydantic ;
+- exports retenus : JSON et XML Moodle Feedback ;
+- clé API côté serveur uniquement, via `.env` non versionné ;
+- mode mock disponible pour tester l'interface sans appel API.
 
 ## Résumé court
 
-Le **Studio IA CIM** est un futur module privé d'Eval-o-matic. Il aidera un enseignant, un ingénieur pédagogique ou une équipe formation à construire des items d'EEE en suivant explicitement la méthode :
+**Learnix EEE** est une sous-branche privée de Learnix reliée à Eval-o-matic. Elle aide un enseignant, un ingénieur pédagogique ou une équipe formation à construire des items d'EEE en suivant explicitement la méthode :
 
 ```text
 Critère -> Indicateur -> Modalité d'observation -> Item -> Echelle -> Usage du résultat
@@ -544,7 +569,7 @@ Les questionnaires d'évaluation des enseignements par les étudiants souffrent 
 - empilement d'items sans architecture critériée ;
 - difficulté à relier les réponses à un diagnostic pédagogique exploitable.
 
-Le Studio IA CIM veut transformer l'IA en **assistant de méthode**. L'IA ne doit pas seulement produire une question : elle doit rendre visible la logique de construction qui mène à cette question.
+Learnix EEE veut transformer l'IA en **assistant de méthode**. L'IA ne doit pas seulement produire une question : elle doit rendre visible la logique de construction qui mène à cette question.
 
 Le projet s'inscrit dans l'esprit de JEDI-OpenLab : pédagogie ouverte, ingénierie pédagogique sobre, usages raisonnés de l'IA, documentation des choix de conception et production de ressources réutilisables.
 
@@ -569,7 +594,7 @@ On peut voir dans ce démonstrateur un exemple concret d'IA utile, maîtrisée e
 
 ### Raison technique
 
-Learnix démontre l'intérêt d'un assistant documentaire câblé sur un corpus via AnythingLLM. Le Studio IA CIM explore autre chose : un **studio métier guidé**, où la logique de travail est codée dans le parcours, les prompts, les schémas de sortie et les règles d'audit.
+Learnix démontre l'intérêt d'un assistant documentaire câblé sur un corpus via AnythingLLM. Learnix EEE explore une déclinaison métier guidée, où la logique de travail est codée dans le parcours, les prompts, les schémas de sortie et les règles d'audit.
 
 Le POC doit donc être construit plutôt comme une application Python contrôlée que comme un chatbot libre.
 
@@ -610,7 +635,7 @@ Le problème n'est pas le manque d'idées de questions. Le problème est l'absen
 - Enseignants et enseignants-chercheurs.
 - Responsables de formation.
 - Equipes qualité et amélioration continue.
-- Direction ou équipes de pilotage souhaitant observer un démonstrateur IA responsable.
+- Directions, équipes qualité ou équipes de pilotage souhaitant observer un démonstrateur IA responsable.
 
 #### Contraintes
 
@@ -653,7 +678,7 @@ L'IA doit répondre sous forme structurée, idéalement JSON validé par schéma
 
 #### Principe de prudence
 
-Le Studio IA CIM ne doit jamais affirmer qu'un item mesure directement la qualité d'un enseignement. Il doit parler d'observations, de perceptions, d'indices, de signaux et d'actions possibles.
+Learnix EEE ne doit jamais affirmer qu'un item mesure directement la qualité d'un enseignement. Il doit parler d'observations, de perceptions, d'indices, de signaux et d'actions possibles.
 
 ### D - Développement
 
@@ -727,7 +752,7 @@ Créer un démonstrateur privé d'IA capable d'accompagner la conception d'items
 - Expliquer la logique CIM retenue.
 - Recommander une échelle ou une modalité de réponse.
 - Construire une mini-banque d'items validés.
-- Exporter des items en texte, JSON et, à terme, XML Moodle Feedback.
+- Exporter des items en JSON et XML Moodle Feedback.
 
 ### Objectifs techniques
 
@@ -741,7 +766,7 @@ Créer un démonstrateur privé d'IA capable d'accompagner la conception d'items
 
 - Montrer un usage responsable et concret de l'IA en ingénierie pédagogique.
 - Montrer que l'IA peut soutenir une méthode plutôt que remplacer l'expertise.
-- Fournir un support de discussion à la Direction de Centrale Lille.
+- Fournir un support de discussion à une direction ou une équipe de pilotage.
 - Tester l'acceptabilité d'un studio IA privé avant toute réflexion de déploiement.
 
 ## Périmètre
@@ -754,7 +779,7 @@ Créer un démonstrateur privé d'IA capable d'accompagner la conception d'items
 - Utilisation d'un corpus méthode.
 - Prompts spécialisés EEE.
 - Sorties structurées.
-- Export texte et JSON.
+- Export JSON et XML Moodle Feedback.
 - Scénarios de démonstration.
 - Documentation complète.
 
@@ -962,10 +987,8 @@ L'utilisateur peut :
 
 Exports attendus :
 
-- texte simple ;
-- Markdown ;
 - JSON structuré ;
-- XML Moodle Feedback dans une phase ultérieure.
+- XML Moodle Feedback.
 
 ## Spécifications fonctionnelles
 
@@ -1062,9 +1085,8 @@ Le système peut comparer deux formulations et expliquer laquelle est préférab
 
 Exports minimum :
 
-- Markdown ;
 - JSON ;
-- presse-papiers.
+- XML Moodle Feedback.
 
 Exports souhaités ensuite :
 
@@ -1171,7 +1193,7 @@ Le studio doit signaler :
 ### Phase 1 - POC local rapide
 
 ```text
-studio-ia-cim/
+learnix-eee/
   SPECIFICATIONS.md
   app/
     main.py
@@ -1182,6 +1204,8 @@ studio-ia-cim/
       cim_generator.py
       item_auditor.py
       exporter.py
+      moodle_feedback.py
+      rag_retriever.py
     prompts/
       system.md
       generation_cim.md
@@ -1201,6 +1225,8 @@ Interface :
 - lancement local ;
 - aucune clé dans le front ;
 - sauvegarde locale.
+- RAG documentaire minimal dès le premier prototype ;
+- export JSON et XML Moodle Feedback dès le premier prototype.
 
 ### Phase 2 - POC renforcé
 
@@ -1440,15 +1466,17 @@ Sortie attendue :
 
 ### Démo 3 - Export
 
-L'utilisateur sélectionne trois items, les exporte en Markdown et JSON, puis montre comment ces items pourraient rejoindre Eval-o-matic.
+L'utilisateur sélectionne trois items, les exporte en JSON et XML Moodle Feedback, puis montre comment ces items pourraient rejoindre Eval-o-matic.
 
 ## Feuille de route
 
 ### Phase 0 - Cadrage
 
-- Valider le nom du POC.
-- Choisir Streamlit ou FastAPI.
-- Sélectionner cinq à dix documents méthode.
+- Nom retenu : Learnix EEE.
+- Stack initiale retenue : Streamlit, Python, Pydantic.
+- Modèle candidat principal : `gpt-oss-120b`.
+- Exports prioritaires retenus : JSON et XML Moodle Feedback.
+- Sélectionner cinq à dix documents méthode pour enrichir le corpus.
 - Rédiger trois scénarios de démonstration.
 
 ### Phase 1 - Prototype minimal
@@ -1457,7 +1485,7 @@ L'utilisateur sélectionne trois items, les exporte en Markdown et JSON, puis mo
 - Formulaire contexte.
 - Génération CIM.
 - Audit simple.
-- Export Markdown/JSON.
+- Export JSON/XML Moodle Feedback.
 
 ### Phase 2 - Qualité pédagogique
 
@@ -1474,7 +1502,7 @@ L'utilisateur sélectionne trois items, les exporte en Markdown et JSON, puis mo
 - Citer les sources internes utilisées.
 - Tester avec et sans RAG.
 
-### Phase 4 - Démonstration Direction
+### Phase 4 - Démonstration de pilotage
 
 - Préparer scénario de 10 minutes.
 - Préparer cas fictifs.
@@ -1487,36 +1515,40 @@ L'utilisateur sélectionne trois items, les exporte en Markdown et JSON, puis mo
 - Ajouter XML Moodle Feedback.
 - Prévoir un backend privé si l'intégration au site est souhaitée.
 
-## Noms possibles
+## Nom retenu
 
-Noms orientés JEDI :
+Nom principal :
 
-- **Item-o-matic** ;
-- **CIM Studio** ;
-- **EEE Copilot** ;
-- **Questionnaire Studio IA** ;
-- **Eval-o-matic Studio IA**.
+```text
+Learnix EEE
+```
+
+Sous-titre :
+
+```text
+Assistant IA pour concevoir des questionnaires d'évaluation des enseignements
+```
 
 Nom recommandé pour le dossier de travail :
 
 ```text
-studio-ia-cim
+learnix-eee
 ```
 
-Nom recommandé pour la démonstration :
+Méthode interne :
 
 ```text
-Eval-o-matic Studio IA
+CIM : Critère -> Indicateur -> Modalité d'observation
 ```
 
 ## Décisions ouvertes
 
-- Choisir Streamlit ou FastAPI pour le premier POC.
+- Valider Streamlit pour le premier POC.
 - Définir la structure exacte du corpus.
-- Choisir le modèle API.
+- Tester `gpt-oss-120b` comme modèle candidat principal, avec comparaison possible avec `llama-3.3-70b` et `mistral-medium-250523`.
 - Définir les premiers prompts.
 - Définir le schéma Pydantic.
-- Définir les exports prioritaires.
+- Stabiliser les exports JSON et XML Moodle Feedback.
 - Décider si l'audit doit produire un score numérique ou une appréciation qualitative.
 - Décider si les sessions doivent être sauvegardées par défaut.
 
@@ -1529,11 +1561,11 @@ Le premier POC doit permettre de :
 3. générer une chaîne CIM complète ;
 4. obtenir au moins trois variantes d'item ;
 5. auditer un item existant ;
-6. exporter une sélection en Markdown et JSON ;
+6. exporter une sélection en JSON et XML Moodle Feedback ;
 7. expliquer les limites de l'outil ;
 8. fonctionner sans exposer la clé API ;
 9. être compréhensible par une personne non technicienne ;
-10. servir de base à une démonstration devant la Direction.
+10. servir de base à une démonstration auprès d'une équipe de pilotage.
           </script>
         </div>
       </section>
@@ -1543,6 +1575,7 @@ Le premier POC doit permettre de :
     <footer class="footer-shell">
       <div class="shell footer-grid">
         <span class="footer-text"><i class="fa-solid fa-flask footer-icon" aria-hidden="true"></i><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
+        <span class="footer-version">Version du site 2026-05-23.9</span>
       </div>
     </footer>
 
@@ -1555,6 +1588,6 @@ Le premier POC doit permettre de :
       </section>
     </div>
 
-    <script src="assets/app.js?v=2026-05-23.8"></script>
+    <script src="assets/app.js?v=2026-05-23.9"></script>
   </body>
 </html>

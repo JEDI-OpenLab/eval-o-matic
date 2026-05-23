@@ -603,6 +603,18 @@ select:focus {
   font-weight: 800;
 }
 
+.project-update {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.project-update code {
+  border-radius: 5px;
+  padding: 0.1rem 0.28rem;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.62);
+}
+
 .info-card,
 .method-card {
   min-width: 0;
@@ -1018,6 +1030,12 @@ select:focus {
 .footer-icon {
   color: var(--amber-soft);
   font-size: 0.95rem;
+}
+
+.footer-version {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .footer-shell strong,
