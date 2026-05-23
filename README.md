@@ -24,8 +24,7 @@ La version initiale contient :
 - un audit express d'item de questionnaire ;
 - un studio de composition avec des items EEE génériques, des items créés par l'utilisateur, une matrice critériée et un audit de formulation ;
 - un export XML compatible avec l'import de questions de l'activité Moodle Feedback ;
-- une synthèse intégrée des principes de conception et de la méthode critère-indicateur-modalité ;
-- un plan d'action intégré directement dans la page.
+- une synthèse intégrée des principes de conception et de la méthode critère-indicateur-modalité.
 
 ## Structure
 

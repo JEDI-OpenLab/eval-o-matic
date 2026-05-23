@@ -231,37 +231,6 @@ const auditRules = [
   }
 ];
 
-const roadmap = [
-  {
-    title: "Cadrage",
-    body: "Clarifier l'usage du recueil : satisfaction, diagnostic, amélioration continue, conformité ou dialogue pédagogique."
-  },
-  {
-    title: "Modèle",
-    body: "Structurer la base autour des dimensions, critères, indicateurs, modalités d'observation et biais associés."
-  },
-  {
-    title: "Audit",
-    body: "Renforcer les règles de repérage : clarté, neutralité, unicité, satisfaction trop globale, halo, lassitude et acquiescement."
-  },
-  {
-    title: "Studio",
-    body: "Composer un questionnaire court, équilibré, exportable et relié à des diagnostics pédagogiques."
-  },
-  {
-    title: "Analyse",
-    body: "Aider l'équipe à interpréter les signaux sans confondre satisfaction étudiante et preuve directe de qualité."
-  },
-  {
-    title: "Qualitatif",
-    body: "Prévoir des trames de focus group, d'entretien ou de concertation quand un score ne suffit pas à comprendre."
-  },
-  {
-    title: "Suivi",
-    body: "Relier les décisions à des actions observables et les suivre sur plusieurs semestres."
-  }
-];
-
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
@@ -629,15 +598,6 @@ const saveSelection = () => {
   storage.set("evalomatic-custom-items", JSON.stringify(state.customItems));
 };
 
-const renderRoadmap = () => {
-  $("#roadmap").innerHTML = roadmap.map((step) => `
-    <li>
-      <h3 class="card-title-help">${step.title}${helpButton(step.title, step.body, `Aide : ${step.title}`)}</h3>
-      <p>${step.body}</p>
-    </li>
-  `).join("");
-};
-
 const initHelp = () => {
   const helpPanel = $("#contextHelp");
   const helpTitle = $("#contextHelpTitle");
@@ -707,7 +667,7 @@ const bindEvents = () => {
       indicator: `Un signal étudiant est recueilli sur : ${dimension.criterion}.`,
       response: scaleResponseLabel(scale),
       diagnostic: scale === "focus"
-        ? "Utiliser ce prompt comme support de discussion qualitative et coder les thèmes récurrents."
+        ? "Utiliser cette question comme support de discussion qualitative et coder les thèmes récurrents."
         : "Interpréter le signal avec prudence et vérifier le contexte avant de conclure.",
       action: dimension.action,
       observable: "Action décidée, trace de suivi et évolution du signal au semestre suivant."
@@ -797,7 +757,6 @@ renderDimensions();
 $("#dimensionSelect").value = "alignement";
 renderMethodMatrix();
 renderAuditCards();
-renderRoadmap();
 renderLibrary();
 renderSelection();
 renderAudit(auditItem($("#itemInput").value, $("#dimensionSelect").value, $("#scaleSelect").value));
