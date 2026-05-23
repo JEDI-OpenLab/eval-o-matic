@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eval-o-matic / EEE Studio | JEDI-OpenLab</title>
+    <meta name="description" content="Webapp JEDI-OpenLab pour concevoir, auditer et améliorer des questionnaires d'évaluation des enseignements par les étudiants.">
+    <meta property="og:title" content="Eval-o-matic / EEE Studio | JEDI-OpenLab">
+    <meta property="og:description" content="Concepts, biais, méthode critériée et studio de conception pour questionnaires EEE.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JEDI-OpenLab">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://jedi-openlab.github.io/jedi/PIX/favicon-32.png">
+    <link rel="apple-touch-icon" href="https://jedi-openlab.github.io/jedi/PIX/favicon-180.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.8">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="app-header">
+      <div class="shell header-grid">
+        <a class="brand" href="https://jedi-openlab.github.io/jedi/" aria-label="Retour à JEDI-OpenLab">
+          <img src="https://jedi-openlab.github.io/jedi/PIX/jedi-openlab.png" alt="JEDI-OpenLab" width="52" height="52">
+          <span>
+            <strong>JEDI-OpenLab</strong>
+            <small>Eval-o-matic / EEE Studio</small>
+          </span>
+        </a>
+        <nav class="top-nav" aria-label="Navigation principale">
+          <a href="#concepts">Concepts</a>
+          <a href="#biais">Biais</a>
+          <a href="#methode">Méthode</a>
+          <a href="#grille">Grille</a>
+          <a href="#studio">Studio</a>
+          <a href="#plan">Plan</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="workbench" aria-labelledby="titre-app">
+        <div class="shell workbench-grid">
+          <div class="workbench-copy">
+            <p class="kicker">Projet EEE</p>
+            <h1 id="titre-app">Eval-o-matic<br><span>EEE Studio</span></h1>
+            <p class="lead">
+              Un atelier pour comprendre ce que peut réellement produire une évaluation des enseignements,
+              construire une grille critériée, puis composer des questions actionnables.
+            </p>
+            <div class="proof-strip" aria-label="Repères de conception">
+              <span>Estimer <button class="help-button mini" type="button" aria-label="Aide : estimer" data-help-title="Estimer" data-help-body="Estimer consiste à dégager une tendance déclarée. On ne conclut pas encore sur la cause ni sur la qualité complète de l'enseignement.">?</button></span>
+              <span>Apprécier <button class="help-button mini" type="button" aria-label="Aide : apprécier" data-help-title="Apprécier" data-help-body="Apprécier revient à repérer des points d'appui et des points de vigilance, sans réduire l'enseignement à un score.">?</button></span>
+              <span>Comprendre <button class="help-button mini" type="button" aria-label="Aide : comprendre" data-help-title="Comprendre" data-help-body="Comprendre suppose de compléter le questionnaire par des échanges, des traces ou des observations lorsque le signal est ambigu.">?</button></span>
+              <span>Agir <button class="help-button mini" type="button" aria-label="Aide : agir" data-help-title="Agir" data-help-body="Agir signifie relier le recueil à une décision concrète, observable et suivie dans le temps.">?</button></span>
+            </div>
+          </div>
+
+          <aside class="audit-panel hero-card" aria-labelledby="boussole-titre">
+            <div class="panel-heading">
+              <div>
+                <p class="kicker">Boussole</p>
+                <div class="heading-with-help">
+                  <h2 id="boussole-titre">Une EEE n'est pas une expertise</h2>
+                  <button class="help-button" type="button" aria-label="Aide : EEE" data-help-title="Évaluation des enseignements" data-help-body="L'EEE recueille d'abord des perceptions, des ressentis et de la satisfaction. Elle devient utile lorsque l'équipe transforme ces signaux en diagnostic pédagogique prudent.">?</button>
+                </div>
+              </div>
+            </div>
+            <p>
+              Un questionnaire peut estimer une tendance, faire apparaître des points forts ou des irritants,
+              mais il ne forme pas les étudiants à évaluer la qualité d'un enseignement. Le studio assume donc
+              une boucle plus prudente : <strong>recueillir, interpréter, diagnostiquer, agir</strong>.
+            </p>
+            <div class="mini-metric-grid">
+              <div><strong>Critère <button class="help-button mini" type="button" aria-label="Aide : critère" data-help-title="Critère" data-help-body="Le critère nomme une qualité attendue, par exemple la cohérence, la clarté ou l'efficience. Il reste abstrait tant qu'il n'est pas associé à des indicateurs.">?</button></strong><span>qualité attendue</span></div>
+              <div><strong>Indicateur <button class="help-button mini" type="button" aria-label="Aide : indicateur" data-help-title="Indicateur" data-help-body="L'indicateur rend le critère observable. Il précise ce que l'on doit pouvoir constater pour dire qu'un critère semble atteint.">?</button></strong><span>trace observable</span></div>
+              <div><strong>Modalité <button class="help-button mini" type="button" aria-label="Aide : modalité" data-help-title="Modalité d'observation" data-help-body="La modalité dit où et comment l'indicateur sera observé : questionnaire, trace écrite, focus group, analyse de support ou observation.">?</button></strong><span>où et comment voir</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="concepts" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Concepts</p>
+            <div class="heading-with-help">
+              <h2>Définir ce que l'on cherche à évaluer</h2>
+              <button class="help-button" type="button" aria-label="Aide : concepts EEE" data-help-title="Avant le questionnaire" data-help-body="Le premier risque est de rédiger des questions avant de savoir quelle décision elles devront éclairer. Les concepts servent ici à cadrer l'intention.">?</button>
+            </div>
+            <p>
+              Dans un apprentissage, l'évaluation peut servir à valider, orienter ou réguler. Pour une EEE,
+              le questionnaire renseigne surtout des perceptions : satisfaction, ressenti de clarté, sentiment
+              de progression, difficulté vécue. L'équipe pédagogique doit ensuite apprécier ces signaux et
+              comprendre ce qu'ils permettent réellement de décider.
+            </p>
+          </div>
+
+          <div class="principle-grid">
+            <article class="info-card">
+              <span class="card-index">01</span>
+              <h3 class="card-title-help">Estimer <button class="help-button mini" type="button" aria-label="Aide : estimer une perception" data-help-title="Estimer une perception" data-help-body="Une estimation par questionnaire donne une tendance statistique ou descriptive. Elle doit être lue avec le taux de réponse, le contexte et la formulation des items.">?</button></h3>
+              <p>Recueillir une tendance générale par questionnaire ou sondage : perception de la clarté, cohérence, utilité, difficulté, progression.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-index">02</span>
+              <h3 class="card-title-help">Apprécier <button class="help-button mini" type="button" aria-label="Aide : apprécier un signal" data-help-title="Apprécier un signal" data-help-body="Apprécier signifie qualifier le signal : fort, faible, stable, surprenant, isolé ou récurrent. Cela prépare l'enquête pédagogique.">?</button></h3>
+              <p>Identifier des points forts et des points problématiques sans transformer un score en verdict sur la qualité complète d'un enseignement.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-index">03</span>
+              <h3 class="card-title-help">Comprendre <button class="help-button mini" type="button" aria-label="Aide : comprendre un résultat" data-help-title="Comprendre un résultat" data-help-body="Un score ne donne pas la cause. Comprendre demande souvent de comparer avec le syllabus, les activités, les évaluations ou des retours qualitatifs.">?</button></h3>
+              <p>Compléter les signaux par des échanges, focus groups, analyses de syllabus, observations ou concertations lorsque les résultats l'exigent.</p>
+            </article>
+            <article class="info-card">
+              <span class="card-index">04</span>
+              <h3 class="card-title-help">Améliorer <button class="help-button mini" type="button" aria-label="Aide : améliorer" data-help-title="Améliorer" data-help-body="L'amélioration suppose une action réaliste, communiquée aux étudiants et suivie par un observable au semestre suivant.">?</button></h3>
+              <p>Rendre l'EEE utile par des actions concrètes, suivies sur plusieurs semestres, puis communiquées aux parties prenantes.</p>
+            </article>
+          </div>
+
+          <div class="concept-layout">
+            <article class="wide-note">
+              <h3 class="card-title-help">Trois points de vue à tenir ensemble <button class="help-button mini" type="button" aria-label="Aide : parties prenantes" data-help-title="Parties prenantes" data-help-body="Institution, enseignants et étudiants n'attendent pas exactement la même chose d'une EEE. Les expliciter évite de fabriquer un outil qui satisfait un acteur et déçoit les autres.">?</button></h3>
+              <div class="definition-list">
+                <p><strong>Institution <button class="help-button mini" type="button" aria-label="Aide : institution" data-help-title="Point de vue institutionnel" data-help-body="L'institution cherche souvent des signaux de pilotage, de qualité, de conformité ou d'accréditation. Ce besoin peut entrer en tension avec les besoins de diagnostic fin.">?</button></strong><span>Un outil de pilotage, d'autoévaluation et d'accréditation.</span></p>
+                <p><strong>Enseignants <button class="help-button mini" type="button" aria-label="Aide : enseignants" data-help-title="Point de vue enseignant" data-help-body="L'enseignant a besoin de retours interprétables et actionnables, pas d'un verdict global ou d'un classement implicite.">?</button></strong><span>Un retour pour améliorer, valoriser ou ajuster un enseignement.</span></p>
+                <p><strong>Étudiants <button class="help-button mini" type="button" aria-label="Aide : étudiants" data-help-title="Point de vue étudiant" data-help-body="Les étudiants peuvent témoigner de leur expérience d'apprentissage. Cela ne signifie pas qu'ils évaluent seuls la qualité pédagogique au sens expert.">?</button></strong><span>La possibilité d'être officiellement entendus et de contribuer aux conditions d'apprentissage.</span></p>
+              </div>
+            </article>
+            <article class="wide-note accent-note">
+              <h3 class="card-title-help">La règle de prudence <button class="help-button mini" type="button" aria-label="Aide : règle de prudence" data-help-title="Règle de prudence" data-help-body="La prudence ne consiste pas à minimiser les retours étudiants. Elle consiste à les prendre au sérieux sans leur faire dire plus que ce qu'ils peuvent établir.">?</button></h3>
+              <p>
+                Les étudiants ne sont pas nécessairement formés à évaluer un dispositif d'enseignement au sens
+                professionnel du terme. Le questionnaire ne supprime pas cette limite ; il organise un recueil
+                d'informations situées que l'équipe doit ensuite analyser, trianguler et relier à des actions.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="biais" class="section-band pale">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Biais</p>
+            <div class="heading-with-help">
+              <h2>Ce qu'un questionnaire EEE peut déformer</h2>
+              <button class="help-button" type="button" aria-label="Aide : biais EEE" data-help-title="Biais de recueil" data-help-body="La méthode ne promet pas une objectivité parfaite. Elle rend les biais visibles, réduit certains risques de formulation et invite à compléter le questionnaire par d'autres techniques.">?</button>
+            </div>
+            <p>
+              La documentation EEE rappelle qu'un questionnaire est une technique de recueil d'informations,
+              avec ses limites propres. Quand l'objet dépasse la satisfaction, il doit être complété par des
+              observations, entretiens, focus groups, analyses de supports ou discussions d'équipe.
+            </p>
+          </div>
+
+          <div class="limit-grid">
+            <article class="wide-note">
+              <h3 class="card-title-help">Ce que l'outil ne peut pas garantir <button class="help-button mini" type="button" aria-label="Aide : limites" data-help-title="Limites du questionnaire" data-help-body="Un questionnaire bien construit réduit certains biais de formulation, mais il ne transforme pas une déclaration de satisfaction en preuve causale.">?</button></h3>
+              <ul class="clean-list">
+                <li>Transformer une satisfaction déclarée en preuve directe de qualité pédagogique.</li>
+                <li>Former les étudiants à évaluer des choix d'ingénierie pédagogique.</li>
+                <li>Supprimer les effets de contexte : examen proche, charge de travail, relation à l'enseignant, climat du groupe.</li>
+              </ul>
+            </article>
+            <article class="wide-note">
+              <h3 class="card-title-help">Ce que l'outil peut organiser <button class="help-button mini" type="button" aria-label="Aide : apports de l'outil" data-help-title="Apports de l'outil" data-help-body="L'outil organise un recueil plus propre : questions courtes, critères explicites, diagnostics possibles et actions observables.">?</button></h3>
+              <ul class="clean-list">
+                <li>Recueillir des ressentis et des informations de manière plus claire, courte et neutre.</li>
+                <li>Relier chaque question à un critère, un indicateur, un diagnostic possible et une action observable.</li>
+                <li>Aider l'équipe à décider ce qui doit être vérifié par une autre méthode.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="bias-grid" aria-label="Principaux biais à surveiller">
+            <article class="method-card bias-card">
+              <span class="card-index">01</span>
+              <h3 class="card-title-help">Biais d'acquiescement <button class="help-button mini" type="button" aria-label="Aide : biais d'acquiescement" data-help-title="Biais d'acquiescement" data-help-body="Ce biais apparaît lorsque les répondants approuvent par défaut. Il est accentué par les formulations consensuelles ou trop orientées.">?</button></h3>
+              <p>Les répondants tendent à approuver une affirmation, surtout si elle paraît attendue, consensuelle ou valorisante.</p>
+              <p><strong>Réduction :</strong> items neutres, objets précis, option « je ne sais pas », consignes qui autorisent explicitement le désaccord.</p>
+            </article>
+            <article class="method-card bias-card">
+              <span class="card-index">02</span>
+              <h3 class="card-title-help">Biais de lassitude <button class="help-button mini" type="button" aria-label="Aide : biais de lassitude" data-help-title="Biais de lassitude" data-help-body="Plus le questionnaire est long ou répétitif, plus les réponses deviennent automatiques, brèves ou absentes.">?</button></h3>
+              <p>Un questionnaire long ou trop ouvert produit évitement, réponses mécaniques, abandon ou commentaires pauvres.</p>
+              <p><strong>Réduction :</strong> socle court, une seule idée par item, questions ouvertes rares et réellement exploitées.</p>
+            </article>
+            <article class="method-card bias-card">
+              <span class="card-index">03</span>
+              <h3 class="card-title-help">Alignement communautaire <button class="help-button mini" type="button" aria-label="Aide : alignement communautaire" data-help-title="Alignement communautaire" data-help-body="Le groupe peut influencer la réponse individuelle. L'anonymat et le recueil individuel avant discussion réduisent ce risque.">?</button></h3>
+              <p>Dans un groupe, un étudiant peut aligner sa réponse sur l'avis perçu comme dominant, par conformité ou prudence sociale.</p>
+              <p><strong>Réduction :</strong> anonymat, recueil individuel avant discussion collective, rappel que les avis divergents sont légitimes.</p>
+            </article>
+            <article class="method-card bias-card">
+              <span class="card-index">04</span>
+              <h3 class="card-title-help">Effet de halo <button class="help-button mini" type="button" aria-label="Aide : effet de halo" data-help-title="Effet de halo" data-help-body="Une impression générale positive ou négative peut contaminer toutes les réponses. D'où l'intérêt de séparer les dimensions observées.">?</button></h3>
+              <p>Une impression globale, positive ou négative, contamine l'appréciation de dimensions pourtant distinctes.</p>
+              <p><strong>Réduction :</strong> séparer les facettes, éviter les jugements globaux, demander des traces concrètes et trianguler.</p>
+            </article>
+            <article class="method-card bias-card">
+              <span class="card-index">05</span>
+              <h3 class="card-title-help">Effet de contexte <button class="help-button mini" type="button" aria-label="Aide : effet de contexte" data-help-title="Effet de contexte" data-help-body="La proximité d'un examen, d'un conflit, d'une surcharge ou d'un événement récent peut déplacer fortement les réponses.">?</button></h3>
+              <p>Le moment de passation influence les réponses : juste avant un examen, après une difficulté, ou en fin de semestre saturé.</p>
+              <p><strong>Réduction :</strong> choisir un moment lisible, annoncer l'usage des retours et interpréter les scores avec le calendrier.</p>
+            </article>
+            <article class="method-card bias-card">
+              <span class="card-index">06</span>
+              <h3 class="card-title-help">Désirabilité sociale <button class="help-button mini" type="button" aria-label="Aide : désirabilité sociale" data-help-title="Désirabilité sociale" data-help-body="Un répondant peut vouloir donner une image favorable de lui-même ou éviter une critique perçue comme risquée.">?</button></h3>
+              <p>Les répondants peuvent chercher à se montrer sous un jour favorable ou éviter une critique perçue comme risquée.</p>
+              <p><strong>Réduction :</strong> anonymat crédible, communication transparente, questions factuelles et climat de confiance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="methode" class="section-band">
+        <div class="shell split-layout">
+          <div class="section-heading sticky-heading">
+            <p class="kicker">Méthode</p>
+            <div class="heading-with-help">
+              <h2>Construire une grille critériée</h2>
+              <button class="help-button" type="button" aria-label="Aide : grille critériée" data-help-title="Grille critériée" data-help-body="La grille critériée oblige à expliciter ce qui est évalué, comment on l'observe, et quelle décision pourra être prise à partir du recueil.">?</button>
+            </div>
+            <p>
+              La méthode suit l'approche décrite par De Ketele et Rogiers (2015) dans
+              <em>Méthodologie du recueil d'informations</em>. Elle repose sur un triptyque :
+              critère, indicateur, modalité d'observation.
+            </p>
+          </div>
+
+          <div class="method-stack">
+            <article class="method-card">
+              <h3 class="card-title-help">Pourquoi impliquer les parties prenantes ? <button class="help-button mini" type="button" aria-label="Aide : co-construction" data-help-title="Co-construction" data-help-body="Co-construire la grille permet de rendre les critères plus acceptables, plus réalistes et plus proches des situations d'enseignement.">?</button></h3>
+              <p>
+                La grille gagne en acceptation et en efficacité lorsque les enseignants et les acteurs concernés
+                participent à sa construction. Le travail partagé rend les critères plus transparents, reflète
+                mieux les réalités du terrain et renforce la responsabilité collective dans l'amélioration continue.
+              </p>
+            </article>
+
+            <div class="triptych-grid">
+              <article class="method-card">
+                <span class="card-index">Critère</span>
+                <h3 class="card-title-help">Qualité attendue <button class="help-button mini" type="button" aria-label="Aide : qualité attendue" data-help-title="Qualité attendue" data-help-body="La qualité attendue doit être formulée sans rester au niveau d'un mot vague. On la définit pour pouvoir ensuite l'observer.">?</button></h3>
+                <p>Un critère est un élément abstrait et général qui définit la qualité attendue d'une action ou d'une performance.</p>
+                <p class="formula">Dans son action, l'étudiant doit faire preuve de <span>...</span></p>
+              </article>
+              <article class="method-card">
+                <span class="card-index">Indicateur</span>
+                <h3 class="card-title-help">Trace observable <button class="help-button mini" type="button" aria-label="Aide : trace observable" data-help-title="Trace observable" data-help-body="Une trace observable peut être une déclaration étudiante, une production, une consigne, un support, une présence dans le syllabus ou un résultat qualitatif.">?</button></h3>
+                <p>Un indicateur est un élément concret qui permet d'évaluer si le critère est satisfait.</p>
+                <p class="formula">Pour indiquer que le critère est atteint, il faut observer que <span>...</span></p>
+              </article>
+              <article class="method-card">
+                <span class="card-index">Modalité</span>
+                <h3 class="card-title-help">Lieu de preuve <button class="help-button mini" type="button" aria-label="Aide : lieu de preuve" data-help-title="Lieu de preuve" data-help-body="Le lieu de preuve évite les indicateurs impossibles à observer. Il précise concrètement où l'information sera trouvée.">?</button></h3>
+                <p>Une modalité d'observation précise par quels moyens l'indicateur sera observé dans le contexte d'évaluation.</p>
+                <p class="formula">Dans la situation d'évaluation, je vais pouvoir trouver ces informations <span>...</span></p>
+              </article>
+            </div>
+
+            <article class="method-card">
+              <h3 class="card-title-help">Exemple fil rouge <button class="help-button mini" type="button" aria-label="Aide : exemple RECIF" data-help-title="Exemple fil rouge" data-help-body="L'exemple montre le passage d'un objectif général vers un critère, puis vers un indicateur et une modalité d'observation.">?</button></h3>
+              <p>
+                Objectif : l'étudiant est capable d'accéder aux informations nécessaires. Un critère possible est
+                l'efficience, c'est-à-dire l'utilisation optimale des ressources pour atteindre l'objectif visé.
+                L'indicateur peut être : les sources sélectionnées correspondent à au moins quatre incontournables
+                identifiés par l'expert. La modalité d'observation peut être : la sélection des sources se trouve
+                dans la bibliographie du dossier technique.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="grille" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Grille</p>
+            <div class="heading-with-help">
+              <h2>Passer de l'intention à l'observable</h2>
+              <button class="help-button" type="button" aria-label="Aide : intention observable" data-help-title="Intention vers observable" data-help-body="Cette étape évite les questions décoratives : chaque item doit servir une décision ou une compréhension possible.">?</button>
+            </div>
+            <p>
+              Le studio reprend cette logique : chaque item EEE doit pouvoir être replacé dans une grille où
+              l'on voit ce qui est évalué, ce que l'étudiant déclare, la réponse attendue, le diagnostic possible,
+              les actions à mener et l'observable de suivi.
+            </p>
+          </div>
+
+          <div class="step-grid">
+            <article class="method-card">
+              <span class="card-index">Définir un critère</span>
+              <h3 class="card-title-help">Nommer sans rester flou <button class="help-button mini" type="button" aria-label="Aide : définir un critère" data-help-title="Définir un critère" data-help-body="Un critère doit être défini sans se contenter d'un mot-clé. Par exemple, définir la clarté sans seulement répéter clair ou clarté.">?</button></h3>
+              <ol>
+                <li>Identifier la qualité attendue.</li>
+                <li>La définir sans réutiliser le mot ou ses dérivés.</li>
+                <li>Lister ses caractéristiques essentielles.</li>
+                <li>Donner des exemples concrets.</li>
+              </ol>
+            </article>
+            <article class="method-card">
+              <span class="card-index">Définir un indicateur</span>
+              <h3 class="card-title-help">Rendre la qualité observable <button class="help-button mini" type="button" aria-label="Aide : définir un indicateur" data-help-title="Définir un indicateur" data-help-body="L'indicateur décrit ce que l'on doit pouvoir constater. Il peut être qualitatif, quantitatif absolu ou quantitatif relatif.">?</button></h3>
+              <ol>
+                <li>Choisir le critère à évaluer.</li>
+                <li>Formuler la phrase de base.</li>
+                <li>Décrire des éléments concrets et mesurables.</li>
+                <li>Préciser si la mesure est qualitative ou quantitative.</li>
+              </ol>
+            </article>
+            <article class="method-card">
+              <span class="card-index">Définir une modalité</span>
+              <h3 class="card-title-help">Dire où regarder <button class="help-button mini" type="button" aria-label="Aide : modalité d'observation" data-help-title="Définir une modalité" data-help-body="La modalité rend l'indicateur praticable : dans quel document, quelle situation, quelle réponse ou quel échange pourra-t-on trouver l'information ?">?</button></h3>
+              <ol>
+                <li>Identifier l'indicateur à observer.</li>
+                <li>Choisir la méthode d'observation appropriée.</li>
+                <li>Décrire la procédure concrète.</li>
+                <li>Tester et ajuster la modalité.</li>
+              </ol>
+            </article>
+          </div>
+
+          <div class="matrix-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="kicker">Exemple de matrice</p>
+                <h3>Questionnaire, diagnostic et action</h3>
+              </div>
+              <button class="help-button" type="button" aria-label="Aide : matrice" data-help-title="Matrice de conception" data-help-body="Cette matrice évite les questions orphelines : chaque item doit être relié à une méthode de diagnostic et à une action observable.">?</button>
+            </div>
+            <div class="matrix-table-wrap">
+              <table class="matrix-table">
+                <thead>
+                  <tr>
+                    <th>Thème <button class="help-button mini" type="button" aria-label="Aide : thème" data-help-title="Thème" data-help-body="Le thème regroupe les items par dimension pédagogique : information, alignement, supports, organisation, évaluation, parcours ou engagement.">?</button></th>
+                    <th>Critère <button class="help-button mini" type="button" aria-label="Aide : colonne critère" data-help-title="Colonne critère" data-help-body="Le critère indique la qualité attendue derrière l'item. Il évite de traiter une question comme une simple opinion isolée.">?</button></th>
+                    <th>Indicateur <button class="help-button mini" type="button" aria-label="Aide : colonne indicateur" data-help-title="Colonne indicateur" data-help-body="L'indicateur reformule ce que la réponse étudiante est supposée révéler ou signaler.">?</button></th>
+                    <th>Question <button class="help-button mini" type="button" aria-label="Aide : colonne question" data-help-title="Colonne question" data-help-body="La question est la formulation proposée aux étudiants. Elle doit rester courte, neutre et centrée sur un seul objet.">?</button></th>
+                    <th>Diagnostic <button class="help-button mini" type="button" aria-label="Aide : colonne diagnostic" data-help-title="Colonne diagnostic" data-help-body="Le diagnostic indique ce qu'il faudra vérifier avant de conclure : syllabus, supports, alignement, focus group, entretien ou analyse de traces.">?</button></th>
+                    <th>Action <button class="help-button mini" type="button" aria-label="Aide : colonne action" data-help-title="Colonne action" data-help-body="L'action est une piste réaliste à mener si le signal est confirmé. Sans action possible, l'item perd une grande partie de son intérêt.">?</button></th>
+                    <th>Observable <button class="help-button mini" type="button" aria-label="Aide : colonne observable" data-help-title="Colonne observable" data-help-body="L'observable sert à suivre l'effet de l'action : support modifié, rappel envoyé, focus group mené, critère clarifié ou évolution au semestre suivant.">?</button></th>
+                  </tr>
+                </thead>
+                <tbody id="methodMatrix"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="audit" class="section-band pale">
+        <div class="shell split-layout">
+          <div class="section-heading sticky-heading">
+            <p class="kicker">Audit</p>
+            <div class="heading-with-help">
+              <h2>Vérifier la qualité d'un item</h2>
+              <button class="help-button" type="button" aria-label="Aide : audit d'item" data-help-title="Audit d'item" data-help-body="L'audit aide à repérer les formulations fragiles avant diffusion. Il ne valide pas scientifiquement l'item, mais rend les risques plus visibles.">?</button>
+            </div>
+            <p>
+              L'audit repère les fragilités fréquentes : manque de clarté, double objet, formulation orientée,
+              absence d'action possible, échelle inadaptée ou déficit de transparence.
+            </p>
+          </div>
+          <div class="audit-check-grid" id="auditChecklist"></div>
+        </div>
+      </section>
+
+      <section id="studio" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Studio</p>
+            <div class="heading-with-help">
+              <h2>Concevoir et auditer un questionnaire</h2>
+              <button class="help-button" type="button" aria-label="Aide : studio" data-help-title="Studio EEE" data-help-body="Le studio sert de brouillon de conception. Il aide à composer une sélection courte, à auditer les items et à exporter une matrice de travail.">?</button>
+            </div>
+            <p>
+              Composez une sélection d'items, contrôlez le volume, puis exportez une matrice de travail qui
+              garde ensemble question, indicateur, diagnostic, action et observable. Vous pouvez aussi télécharger
+              un XML compatible avec l'import de questions de l'activité Moodle Feedback.
+            </p>
+          </div>
+
+          <div class="studio-layout">
+            <section class="library-panel" aria-labelledby="bibliotheque-titre">
+              <div class="panel-heading">
+                <div>
+                  <p class="kicker">Bibliothèque</p>
+                  <div class="heading-with-help">
+                    <h3 id="bibliotheque-titre">Items génériques</h3>
+                    <button class="help-button" type="button" aria-label="Aide : bibliothèque d'items" data-help-title="Bibliothèque d'items" data-help-body="La bibliothèque propose des items de départ. Ils doivent être adaptés au contexte, jamais repris mécaniquement.">?</button>
+                  </div>
+                </div>
+                <div class="field-label-row">
+                  <select id="libraryFilter" aria-label="Filtrer les items"></select>
+                  <button class="help-button" type="button" aria-label="Aide : filtre" data-help-title="Filtrer les items" data-help-body="Le filtre permet de travailler par dimension pédagogique pour équilibrer le questionnaire et éviter un empilement d'items similaires.">?</button>
+                </div>
+              </div>
+              <div class="item-library" id="itemLibrary"></div>
+            </section>
+
+            <section class="selection-panel" aria-labelledby="selection-titre">
+              <div class="panel-heading">
+                <div>
+                  <p class="kicker">Questionnaire</p>
+                  <div class="heading-with-help">
+                    <h3 id="selection-titre">Sélection de travail</h3>
+                    <button class="help-button" type="button" aria-label="Aide : sélection de travail" data-help-title="Sélection de travail" data-help-body="La sélection doit rester courte, lisible et cohérente avec l'usage prévu. Un questionnaire trop long augmente la lassitude.">?</button>
+                  </div>
+                </div>
+                <div class="field-label-row">
+                  <output class="count-pill" id="itemCount">0 item</output>
+                  <button class="help-button" type="button" aria-label="Aide : compteur" data-help-title="Compteur d'items" data-help-body="Le compteur aide à surveiller la longueur. Au-delà d'un socle court, il vaut souvent mieux déplacer certains points vers un recueil qualitatif.">?</button>
+                </div>
+              </div>
+
+              <form class="audit-form compact-audit" id="auditForm">
+                <div class="field full">
+                  <div class="field-label-row">
+                    <label for="itemInput">Item à auditer</label>
+                    <button class="help-button" type="button" aria-label="Aide : item à auditer" data-help-title="Item à auditer" data-help-body="Privilégiez une formulation courte, affirmative, du point de vue étudiant, qui ne traite qu'un objet à la fois.">?</button>
+                  </div>
+                  <textarea id="itemInput" rows="4">Les activités durant cet enseignement me permettent d'atteindre les objectifs.</textarea>
+                </div>
+                <div class="field">
+                  <div class="field-label-row">
+                    <label for="dimensionSelect">Dimension</label>
+                    <button class="help-button" type="button" aria-label="Aide : dimension" data-help-title="Dimension" data-help-body="La dimension rattache l'item à un angle d'analyse : information, alignement, supports, organisation, évaluation, formation ou engagement.">?</button>
+                  </div>
+                  <select id="dimensionSelect"></select>
+                </div>
+                <div class="field">
+                  <div class="field-label-row">
+                    <label for="scaleSelect">Modalité de recueil</label>
+                    <button class="help-button" type="button" aria-label="Aide : modalité de recueil" data-help-title="Modalité de recueil" data-help-body="La modalité doit correspondre au type d'information souhaité. Une échelle donne une tendance, une question ouverte ou un focus group aide à comprendre.">?</button>
+                  </div>
+                  <select id="scaleSelect">
+                    <option value="likert5">Likert 1 à 5</option>
+                    <option value="likert4">Likert 4 niveaux sans point neutre</option>
+                    <option value="yesno">Oui / plutôt oui / plutôt non / non</option>
+                    <option value="open">Question ouverte</option>
+                    <option value="focus">Focus group</option>
+                  </select>
+                </div>
+                <div class="button-row">
+                  <button class="button primary" type="submit"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Auditer</button>
+                  <button class="help-button" type="button" aria-label="Aide : bouton auditer" data-help-title="Auditer" data-help-body="L'audit analyse la formulation courante : longueur, double objet, jargon, satisfaction trop globale, halo et acquiescement.">?</button>
+                  <button class="button ghost" type="button" id="addCustomItem"><i class="fa-solid fa-circle-plus" aria-hidden="true"></i> Ajouter</button>
+                  <button class="help-button" type="button" aria-label="Aide : ajouter au questionnaire" data-help-title="Ajouter au questionnaire" data-help-body="Ajoute l'item audité dans la sélection de travail. Les items créés restent dans le stockage local du navigateur jusqu'à ce qu'ils soient retirés ou que la sélection soit vidée.">?</button>
+                  <button class="button ghost" type="button" id="useCoreItem"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Exemple</button>
+                  <button class="help-button" type="button" aria-label="Aide : exemple" data-help-title="Exemple" data-help-body="Le bouton Exemple charge un item de la bibliothèque pour tester rapidement le fonctionnement de l'audit.">?</button>
+                </div>
+              </form>
+
+              <div class="audit-result" id="auditResult" aria-live="polite"></div>
+              <div class="selection-summary" id="selectionSummary"></div>
+              <div class="selected-list" id="selectedList"></div>
+              <div class="button-row">
+                <button class="button primary" type="button" id="copyExport"><i class="fa-solid fa-copy" aria-hidden="true"></i> Copier</button>
+                <button class="help-button" type="button" aria-label="Aide : copier l'export" data-help-title="Copier l'export" data-help-body="Copier reprend la matrice de travail : question, thème, critère, indicateur, diagnostic, action et observable.">?</button>
+                <button class="button ghost" type="button" id="downloadSelectionXml"><i class="fa-solid fa-file-code" aria-hidden="true"></i> XML sélection</button>
+                <button class="help-button" type="button" aria-label="Aide : XML de la sélection" data-help-title="XML sélection" data-help-body="Télécharge les items sélectionnés au format XML attendu par l'import de questions de l'activité Moodle Feedback. Les échelles Likert deviennent des choix notés, les questions ouvertes deviennent des zones de texte.">?</button>
+                <button class="button ghost" type="button" id="downloadLibraryXml"><i class="fa-solid fa-box-archive" aria-hidden="true"></i> XML exemples</button>
+                <button class="help-button" type="button" aria-label="Aide : XML exemples" data-help-title="XML exemples" data-help-body="Télécharge toute la banque d'exemples génériques au format Moodle Feedback XML, pour créer rapidement une activité Feedback de départ.">?</button>
+                <button class="button ghost" type="button" id="clearSelection"><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Vider</button>
+                <button class="help-button" type="button" aria-label="Aide : vider la sélection" data-help-title="Vider la sélection" data-help-body="Vider supprime seulement la sélection locale du navigateur. Les items de bibliothèque restent disponibles.">?</button>
+              </div>
+              <div class="field-label-row export-label">
+                <span>Export de travail</span>
+                <button class="help-button" type="button" aria-label="Aide : export de travail" data-help-title="Export de travail" data-help-body="L'export est un brouillon structuré pour retravailler le questionnaire, documenter les choix et préparer un outil de passation.">?</button>
+              </div>
+              <textarea id="exportBox" class="export-box" rows="8" readonly></textarea>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan" class="section-band">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="kicker">Trajectoire</p>
+            <div class="heading-with-help">
+              <h2>Plan de construction</h2>
+              <button class="help-button" type="button" aria-label="Aide : plan de construction" data-help-title="Plan de construction" data-help-body="Le plan décrit les prochaines couches de l'outil : cadrage, modèle, audit, studio, analyse, qualitatif et suivi.">?</button>
+            </div>
+            <p>
+              Le plan est intégré directement dans la page pour garder l'expérience fluide. Les prochaines étapes
+              portent sur l'enrichissement de la banque, l'export, l'analyse des résultats et l'accompagnement
+              des décisions d'amélioration.
+            </p>
+          </div>
+          <ol class="roadmap" id="roadmap"></ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-shell">
+      <div class="shell footer-grid">
+        <span class="footer-text"><i class="fa-solid fa-flask footer-icon" aria-hidden="true"></i><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
+        <span class="footer-version">Version de cadrage 2026-05-23.8</span>
+      </div>
+    </footer>
+
+    <div class="context-help" id="contextHelp" hidden>
+      <section class="context-help-box" role="dialog" aria-labelledby="contextHelpTitle" aria-describedby="contextHelpBody">
+        <button class="context-help-close" type="button" aria-label="Fermer l'aide">×</button>
+        <p class="kicker">Aide contextuelle</p>
+        <h2 id="contextHelpTitle">Aide</h2>
+        <p id="contextHelpBody"></p>
+      </section>
+    </div>
+
+    <script src="assets/app.js?v=2026-05-23.8"></script>
+  </body>
+</html>
