@@ -22,7 +22,7 @@ L'application doit aider une équipe pédagogique à :
 
 ## Version actuelle
 
-Version du site : `2026-05-23.9`
+Version du site : `2026-05-23.10`
 
 La version initiale contient :
 
@@ -33,6 +33,7 @@ La version initiale contient :
 - un export XML compatible avec l'import de questions de l'activité Moodle Feedback ;
 - une synthèse intégrée des principes de conception et de la méthode critère-indicateur-modalité ;
 - une section `Projet en cours` présentant Learnix EEE, son état de POC local et ses spécifications.
+- une mise à jour Learnix EEE intégrant une banque de questions corpus dans le POC privé.
 
 ## Structure
 

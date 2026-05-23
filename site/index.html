@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://jedi-openlab.github.io/jedi/PIX/favicon-32.png">
     <link rel="apple-touch-icon" href="https://jedi-openlab.github.io/jedi/PIX/favicon-180.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.9">
+    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.10">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -514,9 +514,9 @@
             <h3>Prototype amorcé</h3>
             <p>
               Le POC privé est scaffoldé : interface Streamlit locale, mode mock sans appel API,
-              schémas Pydantic, recherche documentaire locale dans le corpus, audit heuristique
-              et exports JSON/XML Moodle Feedback. Le corpus méthodologique peut maintenant être enrichi
-              progressivement dans <code>learnix-eee/corpus/sources/</code>.
+              schémas Pydantic, recherche documentaire locale dans le corpus, banque de questions,
+              audit heuristique et exports JSON/XML Moodle Feedback. Le corpus peut maintenant recevoir
+              des sources méthodologiques et des questions réutilisables.
             </p>
           </article>
 
@@ -542,6 +542,7 @@ La phase de cadrage est engagée et les premiers choix sont actés :
 - modèle candidat principal : `gpt-oss-120b` ;
 - RAG documentaire local dès le premier prototype ;
 - corpus de travail dans `corpus/sources/` ;
+- banque de questions détectée dans le corpus pour inspirer, reprendre ou composer des questionnaires ;
 - sorties structurées par schémas Pydantic ;
 - exports retenus : JSON et XML Moodle Feedback ;
 - clé API côté serveur uniquement, via `.env` non versionné ;
@@ -606,8 +607,9 @@ Le POC doit être montrable rapidement, sans publication publique, avec une exp�
 2. formuler une intention vague ;
 3. voir l'IA reconstruire critère, indicateur et modalité ;
 4. obtenir plusieurs items ;
-5. auditer les items ;
-6. exporter une version utilisable.
+5. reprendre des questions issues d'une banque corpus ;
+6. auditer les items ;
+7. exporter une version utilisable.
 
 ## Cadre ADDIE
 
@@ -692,8 +694,9 @@ Pile recommandée pour le POC :
 - Pydantic pour valider les sorties structurées ;
 - fichier `.env` local pour la clé API ;
 - fichiers Markdown/texte pour le corpus méthode ;
+- fichiers CSV, JSON, Markdown ou texte pour les banques de questions ;
 - JSON ou SQLite pour sauvegarder des sessions de test ;
-- moteur RAG optionnel dans une deuxième phase.
+- RAG local simple dès le premier prototype, évolutif vers un moteur vectoriel si le corpus grossit.
 
 ### I - Implémentation
 
@@ -702,6 +705,7 @@ Le POC doit être utilisable localement par une seule personne.
 Il doit permettre une démonstration maîtrisée :
 
 - corpus préparé ;
+- banque de questions préparée ;
 - exemples de départ ;
 - cas d'usage scénarisés ;
 - données fictives ;
@@ -983,7 +987,19 @@ L'utilisateur peut :
 - changer la modalité ;
 - sauvegarder dans une banque locale.
 
-### Etape 8 - Exporter
+### Etape 8 - Composer avec une banque de questions
+
+L'utilisateur peut :
+
+- parcourir une banque issue du corpus ;
+- filtrer par texte, thème, critère, indicateur ou notes ;
+- reprendre une question existante ;
+- utiliser une question comme inspiration pour une nouvelle génération ;
+- ajouter des questions au questionnaire de travail.
+
+La banque ne remplace pas la méthode CIM. Elle sert d'appui : chaque item repris doit rester interprété avec son critère, son indicateur, sa modalité d'observation et ses limites.
+
+### Etape 9 - Exporter
 
 Exports attendus :
 
@@ -1061,9 +1077,16 @@ L'utilisateur peut coller un item existant et obtenir :
 - niveau de confiance ;
 - recommandations d'usage.
 
-### F07 - Banque locale d'items
+### F07 - Banque de questions issue du corpus
 
-Les items validés peuvent être ajoutés à une banque locale.
+Le corpus peut contenir une banque de questions. Elle sert à inspirer la conception, reprendre des items existants ou composer un questionnaire de travail.
+
+Formats acceptés au premier prototype :
+
+- CSV ;
+- JSON ;
+- Markdown ;
+- texte.
 
 Chaque item conserve :
 
@@ -1072,10 +1095,11 @@ Chaque item conserve :
 - son indicateur ;
 - sa modalité ;
 - son échelle ;
-- ses tags ;
-- son statut ;
-- sa date de création ;
-- la version du prompt utilisée.
+- son thème ;
+- sa source corpus ;
+- ses notes d'usage ou de diagnostic.
+
+Les fichiers sont détectés lorsqu'un nom de fichier ou de dossier contient `banque`, `question`, `questions`, `item` ou `items`. Les fichiers commençant par `_` sont ignorés pour permettre de stocker des modèles.
 
 ### F08 - Comparateur d'items
 
@@ -1091,7 +1115,6 @@ Exports minimum :
 Exports souhaités ensuite :
 
 - CSV ;
-- XML Moodle Feedback ;
 - import vers Eval-o-matic public ;
 - fiche PDF de synthèse.
 
@@ -1288,10 +1311,19 @@ Le corpus peut commencer par des fichiers Markdown très contrôlés :
 - principes de formulation d'items ;
 - biais fréquents ;
 - exemples bons/faibles ;
+- banques de questions EEE ;
 - extraits méthodologiques EEE ;
 - règles d'export Moodle Feedback.
 
-Le RAG complet n'est pas obligatoire au démarrage. Pour un POC métier, il peut être plus robuste de commencer avec un **pack méthode court et stable** injecté dans les prompts.
+Le premier prototype combine deux usages du corpus : récupération d'extraits méthodologiques pour guider la génération, et lecture structurée des banques de questions pour inspirer ou composer les questionnaires.
+
+Formats de banque reconnus :
+
+- CSV avec les colonnes `id`, `texte`, `type_reponse`, `echelle`, `theme`, `critere`, `indicateur`, `modalite_observation`, `notes` ;
+- JSON sous forme de liste ou d'objet contenant `questions`, `items` ou `banque` ;
+- Markdown ou texte avec des listes à puces ou numérotées.
+
+Pour un POC métier, le corpus doit rester contrôlé : peu de documents, bien nommés, avec des exemples vérifiés et des limites d'interprétation explicites.
 
 ### RAG éventuel
 
@@ -1476,6 +1508,7 @@ L'utilisateur sélectionne trois items, les exporte en JSON et XML Moodle Feedba
 - Stack initiale retenue : Streamlit, Python, Pydantic.
 - Modèle candidat principal : `gpt-oss-120b`.
 - Exports prioritaires retenus : JSON et XML Moodle Feedback.
+- Banque de questions corpus intégrée au prototype local.
 - Sélectionner cinq à dix documents méthode pour enrichir le corpus.
 - Rédiger trois scénarios de démonstration.
 
@@ -1484,12 +1517,13 @@ L'utilisateur sélectionne trois items, les exporte en JSON et XML Moodle Feedba
 - Interface locale.
 - Formulaire contexte.
 - Génération CIM.
+- Banque de questions lisible depuis le corpus.
 - Audit simple.
 - Export JSON/XML Moodle Feedback.
 
 ### Phase 2 - Qualité pédagogique
 
-- Ajouter banque d'exemples.
+- Enrichir la banque d'exemples.
 - Ajouter scores d'audit.
 - Ajouter règles de biais.
 - Ajouter variantes d'items.
@@ -1575,7 +1609,7 @@ Le premier POC doit permettre de :
     <footer class="footer-shell">
       <div class="shell footer-grid">
         <span class="footer-text"><i class="fa-solid fa-flask footer-icon" aria-hidden="true"></i><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
-        <span class="footer-version">Version du site 2026-05-23.9</span>
+        <span class="footer-version">Version du site 2026-05-23.10</span>
       </div>
     </footer>
 
@@ -1588,6 +1622,6 @@ Le premier POC doit permettre de :
       </section>
     </div>
 
-    <script src="assets/app.js?v=2026-05-23.9"></script>
+    <script src="assets/app.js?v=2026-05-23.10"></script>
   </body>
 </html>
