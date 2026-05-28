@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://jedi-openlab.github.io/jedi/PIX/favicon-32.png">
     <link rel="apple-touch-icon" href="https://jedi-openlab.github.io/jedi/PIX/favicon-180.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/styles.css?v=2026-05-23.10">
+    <link rel="stylesheet" href="assets/styles.css?v=2026-05-28.1">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -502,7 +502,7 @@
             </article>
             <article class="project-signal">
               <strong>Modèle candidat</strong>
-              <span>gpt-oss-120b</span>
+              <span>mistral-small-4-119b</span>
             </article>
             <article class="project-signal">
               <strong>Sorties</strong>
@@ -539,7 +539,7 @@ La phase de cadrage est engagée et les premiers choix sont actés :
 - nom principal : **Learnix EEE** ;
 - sous-titre : **Assistant IA pour concevoir des questionnaires d'évaluation des enseignements** ;
 - application locale privée : Streamlit ;
-- modèle candidat principal : `gpt-oss-120b` ;
+- modèle candidat principal : `mistral-small-4-119b` ;
 - RAG documentaire local dès le premier prototype ;
 - corpus de travail dans `corpus/sources/` ;
 - banque de questions détectée dans le corpus pour inspirer, reprendre ou composer des questionnaires ;
@@ -1506,7 +1506,7 @@ L'utilisateur sélectionne trois items, les exporte en JSON et XML Moodle Feedba
 
 - Nom retenu : Learnix EEE.
 - Stack initiale retenue : Streamlit, Python, Pydantic.
-- Modèle candidat principal : `gpt-oss-120b`.
+- Modèle candidat principal : `mistral-small-4-119b`.
 - Exports prioritaires retenus : JSON et XML Moodle Feedback.
 - Banque de questions corpus intégrée au prototype local.
 - Sélectionner cinq à dix documents méthode pour enrichir le corpus.
@@ -1579,7 +1579,7 @@ CIM : Critère -> Indicateur -> Modalité d'observation
 
 - Valider Streamlit pour le premier POC.
 - Définir la structure exacte du corpus.
-- Tester `gpt-oss-120b` comme modèle candidat principal, avec comparaison possible avec `llama-3.3-70b` et `mistral-medium-250523`.
+- Tester `mistral-small-4-119b` comme modèle candidat principal, avec comparaison possible avec `llama-3.3-70b` et `mistral-medium-250523`.
 - Définir les premiers prompts.
 - Définir le schéma Pydantic.
 - Stabiliser les exports JSON et XML Moodle Feedback.
@@ -1609,7 +1609,7 @@ Le premier POC doit permettre de :
     <footer class="footer-shell">
       <div class="shell footer-grid">
         <span class="footer-text"><i class="fa-solid fa-flask footer-icon" aria-hidden="true"></i><strong>JEDI-OpenLab</strong> · Pédagogie ouverte, conçue avec soin.</span>
-        <span class="footer-version">Version du site 2026-05-23.10</span>
+        <span class="footer-version">Version du site 2026-05-28.1</span>
       </div>
     </footer>
 
@@ -1622,6 +1622,6 @@ Le premier POC doit permettre de :
       </section>
     </div>
 
-    <script src="assets/app.js?v=2026-05-23.10"></script>
+    <script src="assets/app.js?v=2026-05-28.1"></script>
   </body>
 </html>
