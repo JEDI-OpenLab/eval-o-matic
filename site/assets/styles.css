@@ -1,8 +1,10 @@
 :root {
+  color-scheme: light;
   --ink: #182c32;
   --ink-soft: #48616a;
   --paper: #f7f4ed;
   --paper-strong: #fffdf8;
+  --surface: #fff;
   --line: #d8d1c4;
   --teal: #116b68;
   --teal-soft: #d7ece8;
@@ -14,6 +16,11 @@
   --amber-soft: #f7e7bd;
   --green: #587343;
   --green-soft: #e2ead8;
+  --header-bg: rgba(255, 253, 248, 0.94);
+  --hero-bg: linear-gradient(120deg, #182c32 0%, #1f5f62 56%, #315f8d 100%);
+  --modal-backdrop: rgba(24, 44, 50, 0.42);
+  --footer-bg: rgba(22, 48, 66, 0.96);
+  --white-contrast: #fff;
   --shadow: 0 18px 46px rgba(24, 44, 50, 0.14);
   --radius: 8px;
   --header-height: 76px;
@@ -25,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1.25rem);
 }
 
 body {
@@ -36,8 +44,12 @@ body {
   overflow-x: hidden;
 }
 
+main > section {
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
+}
+
 body::selection {
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--teal);
 }
 
@@ -64,7 +76,7 @@ select {
   top: -5rem;
   z-index: 20;
   padding: 0.75rem 1rem;
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--ink);
   border-radius: var(--radius);
 }
@@ -83,12 +95,13 @@ select {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 253, 248, 0.94);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
 }
 
 .header-grid {
+  min-width: 0;
   min-height: var(--header-height);
   display: flex;
   align-items: center;
@@ -118,6 +131,10 @@ select {
   display: block;
 }
 
+.brand span {
+  min-width: 0;
+}
+
 .brand strong {
   font-size: 1rem;
 }
@@ -128,6 +145,8 @@ select {
 }
 
 .top-nav {
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -135,7 +154,7 @@ select {
   padding: 0.35rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
 }
 
 .top-nav a {
@@ -150,7 +169,7 @@ select {
 
 .top-nav a:hover,
 .top-nav a:focus {
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--teal);
 }
 
@@ -159,8 +178,8 @@ select {
   display: grid;
   align-items: center;
   padding: 3rem 0 3.5rem;
-  color: #fff;
-  background: linear-gradient(120deg, #182c32 0%, #1f5f62 56%, #315f8d 100%);
+  color: var(--white-contrast);
+  background: var(--hero-bg);
 }
 
 .workbench-grid {
@@ -243,7 +262,7 @@ h3 {
   padding: 0.7rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius);
-  color: #fff;
+  color: var(--white-contrast);
   background: rgba(255, 255, 255, 0.12);
   text-align: center;
   font-weight: 800;
@@ -354,7 +373,7 @@ h3 {
   border: 1px solid rgba(24, 44, 50, 0.22);
   border-radius: 50%;
   color: var(--teal);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
   font-size: 0.82rem;
   font-weight: 900;
@@ -382,7 +401,7 @@ h3 {
 
 .help-button:hover,
 .help-button[aria-expanded="true"] {
-  color: #fff;
+  color: var(--white-contrast);
   border-color: var(--teal);
   background: var(--teal);
 }
@@ -428,7 +447,7 @@ select {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
 }
 
 textarea {
@@ -470,7 +489,7 @@ select:focus {
 }
 
 .button.primary {
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--teal);
 }
 
@@ -481,7 +500,7 @@ select:focus {
 .button.ghost {
   color: var(--ink);
   border-color: var(--line);
-  background: #fff;
+  background: var(--surface);
 }
 
 .button.ghost:hover {
@@ -526,7 +545,7 @@ select:focus {
 }
 
 .section-band.ink {
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--ink);
 }
 
@@ -702,7 +721,7 @@ select:focus {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--surface);
 }
 
 .matrix-table {
@@ -731,7 +750,7 @@ select:focus {
 }
 
 .matrix-table th {
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--teal);
   text-align: left;
 }
@@ -816,7 +835,7 @@ select:focus {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 0.85rem;
-  background: #fff;
+  background: var(--surface);
 }
 
 .item-card h4,
@@ -862,12 +881,12 @@ select:focus {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
 }
 
 .icon-button:hover {
-  color: #fff;
+  color: var(--white-contrast);
   border-color: var(--teal);
   background: var(--teal);
 }
@@ -940,7 +959,7 @@ select:focus {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1rem;
-  color: #fff;
+  color: var(--white-contrast);
   background: var(--ink);
 }
 
@@ -968,15 +987,17 @@ select:focus {
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(24, 44, 50, 0.42);
+  background: var(--modal-backdrop);
 }
 
 .context-help-box {
   position: relative;
   width: min(560px, 100%);
+  max-height: min(72vh, 720px);
+  overflow-y: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.5rem 3.25rem 1.5rem 1.5rem;
   color: var(--ink);
   background: var(--paper-strong);
   box-shadow: var(--shadow);
@@ -991,14 +1012,14 @@ select:focus {
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
   cursor: pointer;
   font-size: 1.35rem;
   line-height: 1;
 }
 
 .context-help-close:hover {
-  color: #fff;
+  color: var(--white-contrast);
   border-color: var(--coral);
   background: var(--coral);
 }
@@ -1006,7 +1027,7 @@ select:focus {
 .footer-shell {
   padding: 1.5rem 0;
   color: rgba(255, 255, 255, 0.92);
-  background: rgba(22, 48, 66, 0.96);
+  background: var(--footer-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -1040,7 +1061,7 @@ select:focus {
 
 .footer-shell strong,
 .footer-shell a {
-  color: #fff;
+  color: var(--white-contrast);
 }
 
 @media (max-width: 1000px) {
@@ -1086,13 +1107,20 @@ select:focus {
 
   .top-nav {
     width: 100%;
-    flex-wrap: wrap;
-    overflow-x: visible;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
   }
 
   .top-nav a {
-    flex: 1 1 96px;
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 0.52rem 0.75rem;
     text-align: center;
+    white-space: nowrap;
   }
 
   .workbench {
@@ -1145,5 +1173,72 @@ select:focus {
   .spec-document {
     border-left: 0;
     padding-left: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ink: #eef6f3;
+    --ink-soft: #b7c8c4;
+    --paper: #101b1f;
+    --paper-strong: #162429;
+    --surface: #192b31;
+    --line: #31484f;
+    --teal: #63d1c8;
+    --teal-soft: #173d3f;
+    --blue: #8dbbea;
+    --blue-soft: #1f3850;
+    --coral: #f09a7d;
+    --coral-soft: #442620;
+    --amber: #f3c763;
+    --amber-soft: #f2d68b;
+    --green: #aacd82;
+    --green-soft: #24361f;
+    --header-bg: rgba(16, 27, 31, 0.94);
+    --hero-bg: linear-gradient(120deg, #0f2024 0%, #154448 56%, #1c4567 100%);
+    --modal-backdrop: rgba(2, 8, 10, 0.68);
+    --footer-bg: rgba(9, 19, 25, 0.98);
+    --shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+  }
+
+  .brand img {
+    border-color: var(--line);
+  }
+
+  .top-nav,
+  .help-button,
+  textarea,
+  select,
+  .button.ghost,
+  .matrix-table-wrap,
+  .item-card,
+  .selected-item,
+  .icon-button,
+  .context-help-close {
+    background: var(--surface);
+  }
+
+  .workbench .help-button,
+  .section-band.ink .help-button,
+  .proof-strip .help-button.mini,
+  .matrix-table .help-button.mini {
+    color: var(--ink);
+    border-color: var(--line);
+    background: rgba(238, 246, 243, 0.88);
+  }
+
+  .proof-strip span {
+    border-color: rgba(238, 246, 243, 0.22);
+    background: rgba(238, 246, 243, 0.1);
+  }
+
+  .section-heading.light p {
+    color: rgba(238, 246, 243, 0.78);
+  }
+
+  .project-update code {
+    color: var(--ink);
+    background: rgba(238, 246, 243, 0.12);
   }
 }
