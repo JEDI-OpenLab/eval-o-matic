@@ -89,4 +89,6 @@ Learnix EEE dispose maintenant d'un premier scaffold local : Streamlit, RAG docu
 
 ## Licence
 
-Les contenus originaux de cette webapp sont placés sous licence CC0 1.0 Universal.
+Ce projet est distribué sous licence MIT.
+
+Voir [LICENSE.md](LICENSE.md).
