@@ -22,7 +22,7 @@ L'application doit aider une équipe pédagogique à :
 
 ## Version actuelle
 
-Version du site : `2026-05-29.3`
+Version du site : `2026-05-30.1`
 
 La version initiale contient :
 
@@ -36,6 +36,7 @@ La version initiale contient :
 - une mise à jour Learnix EEE intégrant une banque de questions corpus dans le POC privé.
 - une mise à jour du modèle candidat Learnix EEE vers `mistral-small-4-119b`.
 - une correction responsive et dark mode système pour le site public.
+- une entrée de menu vers le site principal JEDI-OpenLab.
 
 ## Structure
 
