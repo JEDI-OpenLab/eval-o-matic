@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Secrets et environnement
+.env
+.env.*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Prototype IA privé Learnix EEE — NE JAMAIS publier
+learnix-eee/
