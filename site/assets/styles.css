@@ -1059,6 +1059,17 @@ select:focus {
   font-weight: 800;
 }
 
+.footer-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-credit {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.82rem;
+}
+
 .footer-shell strong,
 .footer-shell a {
   color: var(--white-contrast);
